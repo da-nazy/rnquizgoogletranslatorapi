@@ -8,34 +8,35 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#36B1F0",
     flex: 1,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   text: {
     color: "#fff",
     fontSize: 25,
     textAlign: "center",
     letterSpacing: -0.02,
-    fontWeight: "600"
+    fontWeight: "600",
   },
   safearea: {
     flex: 1,
     marginTop: 100,
-    justifyContent: "space-between"
-  }
+    justifyContent: "space-between",
+  },
 });
 
 class Quiz extends React.Component {
+  
   state = {
     correctCount: 0,
-    totalCount: this.props.navigation.getParam("questions", []).length,
+    totalCount: this.props.route.params.questions.length,
     activeQuestionIndex: 0,
     answered: false,
-    answerCorrect: false
+    answerCorrect: false,
   };
 
-  answer = correct => {
+  answer = (correct) => {
     this.setState(
-      state => {
+      (state) => {
         const nextState = { answered: true };
 
         if (correct) {
@@ -54,29 +55,29 @@ class Quiz extends React.Component {
   };
 
   nextQuestion = () => {
-    this.setState(state => {
+    this.setState((state) => {
       const nextIndex = state.activeQuestionIndex + 1;
 
       if (nextIndex >= state.totalCount) {
-        return this.props.navigation.popToTop();
+        return this.props.navigation.navigate('QuizIndex');
       }
 
       return {
         activeQuestionIndex: nextIndex,
-        answered: false
+        answered: false,
       };
     });
   };
 
   render() {
-    const questions = this.props.navigation.getParam("questions", []);
+    const questions = this.props.route.params.questions;
     const question = questions[this.state.activeQuestionIndex];
 
     return (
       <View
         style={[
           styles.container,
-          { backgroundColor: this.props.navigation.getParam("color") }
+          { backgroundColor: this.props.route.params.color },
         ]}
       >
         <StatusBar barStyle="light-content" />
@@ -85,7 +86,7 @@ class Quiz extends React.Component {
             <Text style={styles.text}>{question.question}</Text>
 
             <ButtonContainer>
-              {question.answers.map(answer => (
+              {question.answers.map((answer) => (
                 <Button
                   key={answer.id}
                   text={answer.text}
