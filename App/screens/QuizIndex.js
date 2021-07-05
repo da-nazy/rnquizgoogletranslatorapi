@@ -21,7 +21,7 @@ export default ({ navigation }) => (
     />
     <RowItem
       name="IgboEnglish"
-      color="#99b1f0"
+      color="#9A1D93"
       onPress={() =>
         navigation.navigate("Quiz", {
           title: "IgboEnglish",
@@ -30,5 +30,12 @@ export default ({ navigation }) => (
         })
       }
     />
+    <RowItem
+    name="Translate"
+    color="#7400b8"
+    onPress={()=>{
+      navigation.navigate("Translate");
+    }}/>
+    
   </ScrollView>
 );

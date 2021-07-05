@@ -13,14 +13,28 @@ export default function Register({navigation}){
    
     })
 
-    const userExist=()=>{
-
+    const userExist=async ()=>{
+    try{
+      const value=await AsyncStorage.getItem(user.matric);
+      if(value!=null){
+        // user already exist
+        Alert.alert("Error","User already exist"),[{
+          text:'Cancel'
+        }]
+      }else{
+        // add user
+        storeData(user);
+      }
+    }catch(e){
+      // error reading value
+    }
     }
 
     const addUser=()=>{
     if( checkUserInput()){
       //console.log("true");
-      storeData(user);
+      userExist();
+      
     }else{
       //console.log("false");
       Alert.alert("Error","Invalide User Input!",[{
@@ -36,7 +50,14 @@ export default function Register({navigation}){
       try{
        const jsonValue=JSON.stringify(value);
       await AsyncStorage.setItem(value.matric.toString(),jsonValue); 
-     console.log(jsonValue);
+      Alert.alert(
+        "Success",
+        "User has been registered!",
+        [{
+            text:'Continue',
+            onPress:()=>{navigate('Login')}
+        }]
+    )
     }catch(e){
         // saving error
         console.log(e)

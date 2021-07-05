@@ -8,12 +8,18 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@google-cloud/translate": "^6.2.3",
+    "@iamtraction/google-translate": "^1.1.2",
     "@react-native-async-storage/async-storage": "^1.15.5",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
+    "axios": "^0.21.1",
+    "events": "^3.3.0",
     "expo": "^38.0.0",
+    "fs": "0.0.1-security",
     "json-stringify": "^1.0.0",
+    "querystring": "^0.2.1",
     "react": "16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-gesture-handler": "~1.6.0",
@@ -21,8 +27,13 @@
     "react-native-reanimated": "~1.9.0",
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
+    "react-native-speedometer": "^1.0.5",
+    "react-native-vector-icons": "^8.1.0",
     "react-navigation": "^4.4.0",
     "react-navigation-stack": "^2.8.2",
+    "stream": "0.0.2",
+    "url": "^0.11.0",
+    "util": "^0.12.4",
     "yarn": "^1.22.10"
   },
   "devDependencies": {

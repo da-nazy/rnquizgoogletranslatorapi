@@ -85,10 +85,10 @@ export default function Register({navigation}){
         </View>
 
       
-    <TouchableOpacity onPress={getUser} style={{borderWidth:1,height:50,justifyContent:'center',alignItems:'center',margin:10,borderRadius:5,backgroundColor:'#7400b8'}}>
+    <TouchableOpacity onPress={getUser} style={{borderWidth:1,height:50,justifyContent:'center',alignItems:'center',margin:10,borderRadius:5,backgroundColor:'#9A1D93'}}>
         <Text style={{color:'#fff',fontSize:20}}>Login</Text>
     </TouchableOpacity>
-    <View style={{flexDirection:'row',justifyContent:'center',marginTop:10}}><Text >Don't have an account?</Text><TouchableOpacity onPress={()=>navigate('Register')}><Text style={{marginLeft:10,color:'#7400b8'}}>Register</Text></TouchableOpacity></View>
+    <View style={{flexDirection:'row',justifyContent:'center',marginTop:10}}><Text >Don't have an account?</Text><TouchableOpacity onPress={()=>navigate('Register')}><Text style={{marginLeft:10,color:'#9A1D93'}}>Register</Text></TouchableOpacity></View>
        </View>
    )
 }

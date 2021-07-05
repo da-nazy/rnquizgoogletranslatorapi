@@ -32,6 +32,7 @@ class Quiz extends React.Component {
     activeQuestionIndex: 0,
     answered: false,
     answerCorrect: false,
+    title:this.props.route.params.title,
   };
 
   answer = (correct) => {
@@ -59,7 +60,11 @@ class Quiz extends React.Component {
       const nextIndex = state.activeQuestionIndex + 1;
 
       if (nextIndex >= state.totalCount) {
-        return this.props.navigation.navigate('QuizIndex');
+        return this.props.navigation.navigate('Score',{
+          score:this.state.correctCount,
+          title:this.state.title,
+          totalCount:this.state.totalCount,
+        });
       }
 
       return {

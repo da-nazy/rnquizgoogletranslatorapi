@@ -40,7 +40,7 @@ const style = StyleSheet.create({
   },
   appName: {
     fontSize: 45,
-    color: "#7400b8",
+    color: "#9A1D93",
     textAlign: "center",
   },
   conBtn: {
@@ -51,7 +51,7 @@ const style = StyleSheet.create({
     height: 45,
     display:'flex',
     justifyContent:'center',
-    backgroundColor:'#7400b8'
+    backgroundColor:'#9A1D93'
     
   },
 });
